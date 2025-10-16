@@ -1,1 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cryptic Hunt</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="bar">
+      <div class="logo">CRYPTIC HUNT</div>
+      <nav id="nav">
+        <button id="btn-login" class="ghost">Login</button>
+        <button id="btn-logout" class="ghost hidden">Logout</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="auth" class="card">
+        <h2>Login / Register</h2>
+        <form id="auth-form">
+          <label>Username <input id="auth-username" minlength="3" maxlength="24" required /></label>
+          <label>Password <input id="auth-password" type="password" minlength="6" required /></label>
+          <div class="row">
+            <button type="submit">Login</button>
+            <button type="button" id="register-btn" class="secondary">Register</button>
+          </div>
+          <div id="auth-msg" class="msg"></div>
+        </form>
+      </section>
+
+      <section id="game" class="hidden">
+        <div class="grid">
+          <div class="col">
+            <div class="card">
+              <div class="row space">
+                <h2 id="greet">Welcome</h2>
+                <div class="pill" id="progress-pill">0 / 10</div>
+              </div>
+              <div id="levels" class="levels"></div>
+            </div>
+
+            <div class="card">
+              <h3>Leaderboard</h3>
+              <table id="board">
+                <thead><tr><th>#</th><th>User</th><th>Solved</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card" id="play-card">
+              <h3 id="level-title">Level</h3>
+              <p id="prompt"></p>
+              <form id="answer-form" class="answer-form">
+                <input id="answer" placeholder="Type answer" autocomplete="off" />
+                <button type="submit">Submit</button>
+              </form>
+              <div id="result" class="result"></div>
+            </div>
+
+            <div class="card">
+              <h3>Notes</h3>
+              <textarea id="notes" placeholder="Your working..." spellcheck="false"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
 
